@@ -21,18 +21,27 @@ void main() {
     System.out.println("Задача 3");
     int amount = 1000;
     int day = 1;
-    while (amount >= 0) {
-        amount -= 100;
-        day++;
-        System.out.println("день " + day + " парковка стоит " + amount);
+    while (amount >= 100) {
         if (day % 5 == 0) {
+            System.out.println("день " + day + " парковка бесплатна");
             day++;
-            amount += 0;
+            continue;
+        }
+        amount -= 100;
+        System.out.println("день " + day + " остаток денег: " + amount);
+        day++;
+    }
+    System.out.println("Бюджета хватило на " + (day - 1) + " дней");
+    amount = 1000;
+    for (day = 1; amount >= 100; day++) {
+        if (day % 5 == 0) {
             System.out.println("день " + day + " парковка бесплатна");
             continue;
         }
-
+        amount -= 100;
+        System.out.println("день " + day + " остаток денег: " + amount);
     }
+    System.out.println("Бюджета хватило на " + (day - 1) + " дней");
     System.out.println("Задача 4");
     int salary = 15000;
     int month = 0;
